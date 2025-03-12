@@ -26,7 +26,7 @@ function App() {
       const result = await worker.recognize(imageUrl);
 
       setTextResult(result.data.text);
-      console.log("twoj tekst skurwysynu:")
+      console.log("twoj tekst :")
       console.log(result.data.text);
 
       await worker.terminate();
@@ -54,10 +54,10 @@ function App() {
       
       {selectedImage && (
         <div>
-          <button 
+          <button
             onClick={handleTranscribe}
             disabled={isProcessing}
-            style={{ margin: '10px', padding: '8px 16px' }}
+            style={{ margin: '10px', padding: '8px 16px', position: 'center' }}
           >
             {isProcessing ? 'Przetwarzanie...' : 'Rozpoznaj tekst'}
           </button>
@@ -84,7 +84,7 @@ function App() {
       
       {isProcessing && (
         <div className="processing-info">
-          przetwarzanie obrazu zara sie gowno wyswietli na dole
+          przetwarzanie obrazu zaraz tekst wyswietli sie  na dole
         </div>
       )}
     </div>
